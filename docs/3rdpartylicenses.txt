@@ -144,6 +144,12 @@ Apache-2.0
 @firebase/logger
 Apache-2.0
 
+@firebase/firestore
+Apache-2.0
+
+@firebase/webchannel-wrapper
+Apache-2.0
+
 rxjs
 Apache-2.0
                                Apache License
@@ -369,6 +375,19 @@ MIT
 MIT
 
 firebase/database
+
+@angular/fire/storage
+MIT
+
+@firebase/storage
+Apache-2.0
+
+firebase/storage
+
+@angular/fire/firestore
+MIT
+
+firebase/firestore
 
 zone.js
 MIT
