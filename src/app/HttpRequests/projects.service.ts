@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import {  AngularFireList, AngularFireObject, AngularFireDatabase} from '@angular/fire/database';
 import { Projectsmodel } from '../models/projectsmodel';
-import { FirebaseStorage } from '@angular/fire';
+ import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFirestore  } from '@angular/fire/firestore';
+
 
 @Injectable()
 export class HttpProjectsService {
@@ -10,12 +12,11 @@ export class HttpProjectsService {
   files_object : AngularFireObject<any>;
    
   public basepath = '/projects';
-  constructor(private db : AngularFireDatabase) { }
+  constructor(private db : AngularFireDatabase , private storageRef : AngularFireStorage) { }
 
   getProjectsList()
   {
-    
-    this.projectslist = this.db.list(this.basepath);
-   return this.projectslist;
+     this.projectslist = this.db.list(this.basepath);
+     return this.projectslist;
   }
 }

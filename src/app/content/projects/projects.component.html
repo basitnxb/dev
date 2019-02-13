@@ -5,14 +5,16 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
       </div>
     <div class="row m0" >
-      <div class="projects_item wd_18">
-        <img src="assets/img/projects/projects-1.jpg" alt="">
+      <div [ngClass]="(i == 2)?'projects_item wd_44':'projects_item wd_18'" *ngFor="let images of p_list[0]; let i = index">
+        <img src="{{images}}" alt="">
+  
         <div class="hover">
           <h4>Alex Complex for esidence</h4>
           <p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have allowed humanity to create  slimmer.</p>
         </div>
       </div>
-      <div class="projects_item wd_18">
+
+      <!-- <div class="projects_item wd_18">
         <img src="assets/img/projects/projects-2.jpg" alt="">
         <div class="hover">
           <h4>Alex Complex for esidence</h4>
@@ -32,7 +34,7 @@
           <h4>Alex Complex for esidence</h4>
           <p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have allowed humanity to create  slimmer.</p>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
   <!--================End Projects Area =================-->

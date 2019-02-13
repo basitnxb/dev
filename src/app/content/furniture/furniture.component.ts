@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FurnituresService } from 'src/app/services/furnitures.service';
 
 @Component({
   selector: 'app-furniture',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./furniture.component.css']
 })
 export class FurnitureComponent implements OnInit {
+  furnitures = [];
 
-  constructor() { }
+  constructor(private furnitureService : FurnituresService) { }
 
   ngOnInit() {
+    this.furnitures = this.furnitureService.getAllFurnitures();
+    // console.log(this.furnitures);
   }
 
 }

@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpProjectsService } from '../HttpRequests/projects.service';
-import { map } from 'rxjs/operators';
 
 @Injectable()
 export class ProjectsService {
-  projects_list : any;
+  projects_list = [];
   constructor(private http : HttpProjectsService) { }
 
     getProjects(){
-      return this.http.getProjectsList().snapshotChanges().pipe(
-        map(changes =>
-          changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-        )
-      ).subscribe(fileUploads => {
-        console.log(fileUploads);
-        this.projects_list = fileUploads;
-      });
+
+       this.http.getProjectsList().valueChanges().subscribe(
+        (response) => {
+          // console.log(response);
+           this.projects_list.push(response);
+        },
+        (error) => {
+          console.log(error.error.message);
+        }
+      );
+      return this.projects_list;
     }
 }
