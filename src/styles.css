@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+ @import "assets/css/bootstrap.css";
+ @import "assets/vendors/linericon/style.css";
+ @import "assets/css/font-awesome.min.css";
+ @import "assets/vendors/owl-carousel/assets/owl.carousel.css";
+ @import "assets/vendors/lightbox/simpleLightbox.css";
+ @import "assets/vendors/nice-select/css/nice-select.css";
+ @import "assets/vendors/animate-css/animate.css";
+ @import "assets/vendors/flaticon/flaticon.css";
+ @import "assets/css/style.css";
+ @import "assets/css/responsive.css";
+
+.active{
+    color: deepskyblue !important;
+ }
